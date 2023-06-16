@@ -2,13 +2,13 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import CustomIcon from "./CustomIcon";
 
-interface IProps {
+interface IIconText {
   title: string;
   imagePath: string;
   alt?: string;
 }
 
-const IconText: FC<IProps> = ({ imagePath, title, alt }) => {
+const IconText: FC<IIconText> = ({ imagePath, title, alt }) => {
   return (
     <Flex gap={5} alignItems="center">
       <CustomIcon imageSrc={imagePath} alt={alt || "Image"} />

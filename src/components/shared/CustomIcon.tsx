@@ -7,6 +7,8 @@ interface ICustomIcon {
   width?: string | { [key: string]: string };
   height?: string | { [key: string]: string };
   transform?: string | { [key: string]: string };
+  maxW?: string | { [key: string]: string };
+  mx?: string | { [key: string]: string };
 }
 
 const CustomIcon: FC<ICustomIcon> = ({

@@ -1,16 +1,18 @@
 import { FC } from "react";
-import { Box, Container } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import Header from "@/components/StevenSignal/HeaderSection";
 import AboutBotSection from "@/components/StevenSignal/AboutBotSection";
+import TextSection from '@/components/StevenSignal/TextSection';
+import BinanceSection from '@/components/StevenSignal/BinanceSection';
 
 const StevenSignal: FC = () => (
   <Container maxW="1164px">
-    <Box>
+    <Flex direction="column" gap={{base: '16px', md: "32px"}}>
       <Header />
-    </Box>
-    <Box mt="100px">
       <AboutBotSection />
-    </Box>
+      <TextSection />
+      <BinanceSection />
+    </Flex>
   </Container>
 );
 

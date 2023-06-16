@@ -6,6 +6,7 @@ import { FC } from "react";
 const AboutBotSection: FC = () => {
   return (
     <Box
+      as="section"
       bg="#3475EF"
       py="40px"
       px="16px"
