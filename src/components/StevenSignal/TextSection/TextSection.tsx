@@ -1,7 +1,6 @@
-import { Box, Text } from "@chakra-ui/react";
-import { FC } from "react";
+import { Box, Text } from '@chakra-ui/react'
 
-const TextSection: FC = () => (
+const TextSection = () => (
   <Box bg="#000" borderRadius="16px" py="24px" px="26px" textAlign="center">
     <Text
       margin="auto"
@@ -16,6 +15,6 @@ const TextSection: FC = () => (
       сигналы с вашей торговой или инвестиционной стратегией и анализом.
     </Text>
   </Box>
-);
+)
 
-export default TextSection;
+export default TextSection

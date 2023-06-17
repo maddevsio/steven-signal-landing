@@ -1,10 +1,9 @@
-import { Box, Center, Container, Flex, Link, Text } from "@chakra-ui/react";
-import { FC } from "react";
-import SelectLanguage from "@/components/StevenSignal/HeaderSection/SelectLanguage";
-import HeaderLogo from "@/components/StevenSignal/HeaderSection/Logo";
-import { ArrowDownIcon } from "@chakra-ui/icons";
+import HeaderLogo from '@/components/StevenSignal/HeaderSection/Logo'
+import SelectLanguage from '@/components/StevenSignal/HeaderSection/SelectLanguage'
+import { ArrowDownIcon } from '@chakra-ui/icons'
+import { Box, Center, Flex, Link, Text } from '@chakra-ui/react'
 
-const Header: FC = () => (
+const Header = () => (
   <Box as="header">
     <Flex justifyContent="flex-end" py="26px">
       <SelectLanguage />
@@ -12,17 +11,17 @@ const Header: FC = () => (
     <Box mt="24px">
       <HeaderLogo />
     </Box>
-    <Box maxW="1025px" m="auto" mt={{ base: "49px", md: "76px" }}>
+    <Box maxW="1025px" m="auto" mt={{ base: '49px', md: '76px' }}>
       <Text
         textAlign="center"
         fontWeight={900}
-        fontSize={{ base: "32px", md: "46px", lg: "64px" }}
-        lineHeight={{ base: "39px", md: "48px", lg: "78px" }}
+        fontSize={{ base: '32px', md: '46px', lg: '64px' }}
+        lineHeight={{ base: '39px', md: '48px', lg: '78px' }}
       >
         ИИ, который распознает торговые паттерны и высылает сигналы в Телеграм!
       </Text>
     </Box>
-    <Center mt={{ base: "91px", md: "141px" }}>
+    <Center mt={{ base: '91px', md: '141px' }}>
       <Link
         textColor="#3475EF"
         fontWeight={500}
@@ -34,6 +33,6 @@ const Header: FC = () => (
       </Link>
     </Center>
   </Box>
-);
+)
 
-export default Header;
+export default Header
