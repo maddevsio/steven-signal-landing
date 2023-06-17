@@ -1,12 +1,12 @@
-import { Box } from "@chakra-ui/react";
-import { FC } from "react";
+import { Box } from '@chakra-ui/react'
+import { FC } from 'react'
 
 interface ILogo {
-  w?: string | { [key: string]: string };
-  h?: string | { [key: string]: string };
+  w?: string | { [key: string]: string }
+  h?: string | { [key: string]: string }
 }
 
-const Logo: FC<ILogo> = ({ w = "111px", h = "111px" }) => (
+const Logo: FC<ILogo> = ({ w = '111px', h = '111px' }) => (
   <Box w={w} h={h}>
     <svg viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="55.5" cy="55.5" r="55.5" fill="#3475EF" />
@@ -89,6 +89,6 @@ const Logo: FC<ILogo> = ({ w = "111px", h = "111px" }) => (
       </g>
     </svg>
   </Box>
-);
+)
 
-export default Logo;
+export default Logo
