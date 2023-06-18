@@ -1,10 +1,11 @@
-import { FC } from 'react'
-import { Container, Flex } from '@chakra-ui/react'
-import Header from '@/components/StevenSignal/HeaderSection'
 import AboutBotSection from '@/components/StevenSignal/AboutBotSection'
-import TextSection from '@/components/StevenSignal/TextSection'
 import BinanceSection from '@/components/StevenSignal/BinanceSection'
+import DevelopmentPatterns from '@/components/StevenSignal/DevelopmentPatterns'
+import Header from '@/components/StevenSignal/HeaderSection'
 import RecognizablePatterns from '@/components/StevenSignal/RecognizablePatterns'
+import TextSection from '@/components/StevenSignal/TextSection'
+import { Container, Flex } from '@chakra-ui/react'
+import { FC } from 'react'
 
 const StevenSignal: FC = () => (
   <Container maxW="1164px">
@@ -14,6 +15,8 @@ const StevenSignal: FC = () => (
       <TextSection />
       <BinanceSection />
       <RecognizablePatterns />
+      {/* sections */}
+      <DevelopmentPatterns />
     </Flex>
   </Container>
 )
