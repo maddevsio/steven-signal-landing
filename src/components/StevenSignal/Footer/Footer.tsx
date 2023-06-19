@@ -80,7 +80,7 @@ const Footer = () => (
           p="16px"
           bg="#3475EF"
           color="#fff"
-          maxW="333px"
+          maxW="350px"
           w="100%"
           textAlign="center"
           fontWeight={700}
