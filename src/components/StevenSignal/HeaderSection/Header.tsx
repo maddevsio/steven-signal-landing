@@ -27,6 +27,7 @@ const Header = () => (
         fontWeight={500}
         fontSize="16px"
         lineHeight="19px"
+        href="#get-bot-free"
       >
         <ArrowDownIcon boxSize={5} mr="16px" />
         Получить бота бесплатно

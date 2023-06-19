@@ -1,3 +1,4 @@
+import '@/styles/_global.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { type AppProps } from 'next/app'
 import Head from 'next/head'
