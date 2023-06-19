@@ -1,4 +1,4 @@
-import { Select, Text } from '@chakra-ui/react'
+import { Select } from '@chakra-ui/react'
 
 const SelectLanguage = () => (
   <Select
@@ -8,18 +8,8 @@ const SelectLanguage = () => (
     lineHeight="20px"
     variant="unstyled"
   >
-    <option value="english">
-      <Text as="span" color="#fff" bg="#3475EF">
-        EN
-      </Text>{' '}
-      English
-    </option>
-    <option value="russian">
-      <Text as="span" color="#fff" bg="#3475EF">
-        РУ
-      </Text>{' '}
-      Русский
-    </option>
+    <option value="english">EN English</option>
+    <option value="russian">РУ Русский</option>
   </Select>
 )
 
