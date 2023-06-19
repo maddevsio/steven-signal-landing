@@ -8,7 +8,6 @@ export const сards = [
     image: './assets/images/pattern-types/double-top.svg',
   },
   { title: 'HAMMER', image: './assets/images/pattern-types/hammer.svg' },
-
   {
     title: 'INVERSE HAMMER',
     image: './assets/images/pattern-types/inverse-hammer.svg',
@@ -21,7 +20,6 @@ export const сards = [
     title: 'MORNING STAR',
     image: './assets/images/pattern-types/morning-star.svg',
   },
-
   {
     title: 'IMBALANCE',
     image: './assets/images/pattern-types/imbalance.svg',
@@ -34,7 +32,6 @@ export const сards = [
     title: 'RISING THREE METHODS',
     image: './assets/images/pattern-types/three-methods.svg',
   },
-
   {
     title: 'HANGING MAN',
     image: './assets/images/pattern-types/hanging-man.svg',
@@ -47,7 +44,6 @@ export const сards = [
     title: 'BEARISH ENGULFING',
     image: './assets/images/pattern-types/bearish-engulfing.svg',
   },
-
   { title: 'DOJI', image: './assets/images/pattern-types/doji.svg' },
   {
     title: 'SPINNING TOP',
@@ -56,5 +52,24 @@ export const сards = [
   {
     title: 'HARAMI PATTERN',
     image: './assets/images/pattern-types/harami-pattern.svg',
+  },
+]
+
+export const patternCards = [
+  {
+    title: 'DARK CLOUD COVER',
+    image: './assets/images/svg/dark-cloud-cover.svg',
+  },
+  {
+    title: 'THREE BLACK CROWS',
+    image: './assets/images/svg/black-crows.svg',
+  },
+  {
+    title: 'EVENING STAR',
+    image: './assets/images/svg/evening-star.svg',
+  },
+  {
+    title: 'PIERCING LINE',
+    image: './assets/images/svg/piercing-line.svg',
   },
 ]

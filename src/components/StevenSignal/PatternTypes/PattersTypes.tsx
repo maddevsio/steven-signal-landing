@@ -1,6 +1,6 @@
-import { Box, Text, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react'
 import { DesktopCards, MobileCards } from './Cards'
-import { сards } from './cardsData'
+import { patternCards, сards } from './cardsData'
 
 const PatternTypes = () => {
   const [isLessThan768] = useMediaQuery('(max-width: 768px)')
@@ -39,6 +39,37 @@ const PatternTypes = () => {
             <DesktopCards cardList={group} />
           </Box>
         ))
+      )}
+      <Text
+        fontWeight={400}
+        fontSize="18px"
+        lineHeight="22px"
+        textAlign={{ base: 'left', sm: 'center' }}
+        my="32px"
+      >
+        Также бот распознает такие редкие паттерны как:
+      </Text>
+      {isLessThan768 ? (
+        <MobileCards cardList={patternCards} />
+      ) : (
+        <Flex gap="16px">
+          {patternCards.map((pattern, index) => (
+            <Flex direction="column" gap="8px" key={index}>
+              <Image src={pattern.image} alt={pattern.title} />
+              <Text
+                py="15px"
+                fontWeight={700}
+                fontSize="20px"
+                lineHeight="24px"
+                textAlign="center"
+                color="#fff"
+                bg="#203466"
+              >
+                {pattern.title}
+              </Text>
+            </Flex>
+          ))}
+        </Flex>
       )}
     </Box>
   )

@@ -28,7 +28,7 @@ const MobileCards = ({ cardList }: any) => (
             <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
+        <AccordionPanel px="0">
           <Image src={card.image} alt={card.image} w="100%" />
         </AccordionPanel>
       </AccordionItem>
