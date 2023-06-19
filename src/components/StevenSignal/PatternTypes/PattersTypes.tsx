@@ -1,23 +1,25 @@
-import { Box, Text } from '@chakra-ui/react'
-import Cards from './Cards'
+import { Box, Text, useMediaQuery } from '@chakra-ui/react'
+import { DesktopCards, MobileCards } from './Cards'
+import { сards } from './cardsData'
 
 const PatternTypes = () => {
-  const firstCards = [
-    {
-      title: 'DOUBLE BOTTOM',
-      image: './assets/images/pattern-types/double-bottom.svg',
-    },
-    {
-      title: 'DOUBLE TOP',
-      image: './assets/images/pattern-types/double-top.svg',
-    },
-    { title: 'HAMMER', image: './assets/images/pattern-types/hammer.svg' },
-  ]
+  const [isLessThan768] = useMediaQuery('(max-width: 768px)')
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const groups = сards.reduce((acc: any[], curr, index) => {
+    const groupIndex = Math.floor(index / 3)
+    if (!acc[groupIndex]) {
+      acc[groupIndex] = []
+    }
+    acc[groupIndex].push(curr)
+    return acc
+  }, [])
+
   return (
     <Box
       bg="#F5F5F5"
       py={{ base: '32px', md: '40px' }}
-      px={{ base: '24px', md: '48px' }}
+      px={{ base: '16px', md: '48px' }}
       borderRadius="16px"
     >
       <Text
@@ -25,11 +27,19 @@ const PatternTypes = () => {
         fontSize={{ base: '24px', md: '40px' }}
         lineHeight={{ base: '29px', md: '49px' }}
         textAlign="center"
-        mb="64px"
+        mb={{ base: '32px', md: '32px' }}
       >
         Виды распознаваемых паттернов
       </Text>
-      <Cards cardList={firstCards} />
+      {isLessThan768 ? (
+        <MobileCards cardList={сards} />
+      ) : (
+        groups.map((group, index) => (
+          <Box key={index}>
+            <DesktopCards cardList={group} />
+          </Box>
+        ))
+      )}
     </Box>
   )
 }
