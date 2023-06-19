@@ -30,7 +30,7 @@ const BinanceSection = () => (
       >
         <CustomIcon
           imageSrc="assets/images/svg/binanceIcon.svg"
-          maxW="292px"
+          maxW={{ base: '200px', md: '292px' }}
           alt="Binance"
           mx={{ base: 'auto', md: 'unset' }}
         />

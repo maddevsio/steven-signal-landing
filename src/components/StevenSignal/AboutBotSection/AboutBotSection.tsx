@@ -1,6 +1,7 @@
 import CustomIcon from '@/components/shared/CustomIcon'
 import IconText from '@/components/shared/IconText'
 import { Box, Flex, Text } from '@chakra-ui/react'
+import Slider from './Slider'
 
 const AboutBotSection = () => (
   <Box
@@ -37,6 +38,7 @@ const AboutBotSection = () => (
       justifyContent="center"
       direction={{ base: 'column', lg: 'row' }}
       alignItems="center"
+      mb="56px"
     >
       <IconText
         title="Распознал паттерн"
@@ -54,6 +56,7 @@ const AboutBotSection = () => (
         imagePath="./assets/images/svg/signal.svg"
       />
     </Flex>
+    <Slider />
   </Box>
 )
 

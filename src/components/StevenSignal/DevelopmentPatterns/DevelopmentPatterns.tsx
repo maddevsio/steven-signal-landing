@@ -38,8 +38,8 @@ const DevelopmentPatterns = () => {
       <Flex gap="16px" direction="column" alignItems="center">
         <Text
           fontWeight={900}
-          fontSize="40px"
-          lineHeight="49px"
+          fontSize={{ base: '24px', md: '40px' }}
+          lineHeight={{ base: '29px', md: '49px' }}
           color="#fff"
           textAlign="center"
         >
@@ -52,6 +52,7 @@ const DevelopmentPatterns = () => {
           color="#fff"
           maxW="697px"
           textAlign="center"
+          px="10px"
         >
           На данный момент мы работаем над распознаванием ряда паттернов ботом,
            для более точного прогнозирования графика.
@@ -60,7 +61,14 @@ const DevelopmentPatterns = () => {
       <Box mb="-24px">
         <Marquee>
           {firstList.map(({ text, bg }, index) => (
-            <Text bg={bg} borderRadius="6px" mx="4px" py="4px" px="9px">
+            <Text
+              key={index}
+              bg={bg}
+              borderRadius="6px"
+              mx="4px"
+              py="4px"
+              px="9px"
+            >
               {text}
             </Text>
           ))}
@@ -69,7 +77,14 @@ const DevelopmentPatterns = () => {
       <Box>
         <Marquee direction="right">
           {secondList.map(({ text, bg }, index) => (
-            <Text bg={bg} borderRadius="6px" mx="4px" py="4px" px="9px">
+            <Text
+              bg={bg}
+              key={index}
+              borderRadius="6px"
+              mx="4px"
+              py="4px"
+              px="9px"
+            >
               {text}
             </Text>
           ))}

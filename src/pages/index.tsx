@@ -3,6 +3,7 @@ import BinanceSection from '@/components/StevenSignal/BinanceSection'
 import DevelopmentPatterns from '@/components/StevenSignal/DevelopmentPatterns'
 import Footer from '@/components/StevenSignal/Footer'
 import Header from '@/components/StevenSignal/HeaderSection'
+import PatternTypes from '@/components/StevenSignal/PatternTypes'
 import RecognizablePatterns from '@/components/StevenSignal/RecognizablePatterns'
 import TextSection from '@/components/StevenSignal/TextSection'
 import { Container, Flex } from '@chakra-ui/react'
@@ -17,7 +18,7 @@ const StevenSignal: FC = () => (
         <TextSection />
         <BinanceSection />
         <RecognizablePatterns />
-        {/* sections */}
+        <PatternTypes />
         <DevelopmentPatterns />
       </Flex>
     </Container>
