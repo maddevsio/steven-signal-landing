@@ -8,9 +8,8 @@ import RecognizablePatterns from '@/components/StevenSignal/RecognizablePatterns
 import TextSection from '@/components/StevenSignal/TextSection'
 import { Container, Flex } from '@chakra-ui/react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { FC } from 'react'
 
-const StevenSignal: FC = () => (
+const StevenSignal = () => (
   <>
     <Container maxW="1164px">
       <Flex direction="column" gap={{ base: '16px', md: '32px' }}>
