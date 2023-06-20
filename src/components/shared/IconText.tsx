@@ -12,7 +12,7 @@ const IconText: FC<IIconText> = ({ imagePath, title, alt }) => (
   <Flex gap={5} alignItems="center">
     <CustomIcon imageSrc={imagePath} alt={alt || 'Image'} />
     <Text
-      fontWeight={900}
+      fontWeight={{ base: '700', md: '900' }}
       fontSize={{ base: '24px', md: '40px' }}
       lineHeight={{ base: '29px', md: '49px' }}
       color="#fff"
