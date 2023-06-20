@@ -1,22 +1,23 @@
-export const footerItems = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getFooterItems = (t: (s: string) => void) => [
   {
-    title: 'Нажать на кнопку “Использовать бота”',
-    description: 'Кнопку, которая находится ниже',
+    title: t('FOOTER_FIRST_ITEM_TITLE'),
+    description: t('FOOTER_FIRST_ITEM_DESCRIPTION'),
     arrow: true,
   },
   {
-    title: 'Перейти в Телеграм',
-    description: 'Подтвердить переход в телеграм на странице',
+    title: t('FOOTER_SECOND_ITEM_TITLE'),
+    description: t('FOOTER_SECOND_ITEM_DESCRIPTION'),
     arrow: true,
   },
   {
-    title: 'В чате с ботом нажать “Start”',
-    description: 'Для запуска и настройки бота',
+    title: t('FOOTER_THIRD_ITEM_TITLE'),
+    description: t('FOOTER_THIRD_ITEM_DESCRIPTION'),
     arrow: true,
   },
   {
-    title: 'Настроить пары через меню',
-    description: 'Добавляйте пары и  получайте сигналы',
+    title: t('FOOTER_FOURTH_ITEM_TITLE'),
+    description: t('FOOTER_FOURTH_ITEM_DESCRIPTION'),
     arrow: false,
   },
 ]

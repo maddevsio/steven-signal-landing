@@ -1,8 +1,11 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
+import { useTranslation } from 'next-i18next'
 import Marquee from 'react-fast-marquee'
 import { firstList, secondList } from './patternsData'
 
 const DevelopmentPatterns = () => {
+  const { t } = useTranslation()
+
   return (
     <Flex
       direction="column"
@@ -20,7 +23,7 @@ const DevelopmentPatterns = () => {
           color="#fff"
           textAlign="center"
         >
-          Паттерны в разработке
+          {t('DEVELOPMENT_PATTERNS_TITLE')}
         </Text>
         <Text
           fontWeight={400}
@@ -31,8 +34,7 @@ const DevelopmentPatterns = () => {
           textAlign="center"
           px="10px"
         >
-          На данный момент мы работаем над распознаванием ряда паттернов ботом,
-           для более точного прогнозирования графика.
+          {t('DEVELOPMENT_PATTERNS_DESCRIPTION')}
         </Text>
       </Flex>
       <Box mb="-24px">

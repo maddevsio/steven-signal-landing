@@ -1,16 +1,16 @@
 import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react'
+import { useTranslation } from 'next-i18next'
 import { DesktopCards, MobileCards } from './Cards'
 import { patternCards, сards } from './cardsData'
 
 const PatternTypes = () => {
+  const { t } = useTranslation()
   const [isLessThan768] = useMediaQuery('(max-width: 768px)')
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const groups = сards.reduce((acc: any[], curr, index) => {
     const groupIndex = Math.floor(index / 3)
-    if (!acc[groupIndex]) {
-      acc[groupIndex] = []
-    }
+    if (!acc[groupIndex]) acc[groupIndex] = []
     acc[groupIndex].push(curr)
     return acc
   }, [])
@@ -29,7 +29,7 @@ const PatternTypes = () => {
         textAlign="center"
         mb={{ base: '32px', md: '32px' }}
       >
-        Виды распознаваемых паттернов
+        {t('PATTERN_TYPES_TITLE')}
       </Text>
       {isLessThan768 ? (
         <MobileCards cardList={сards} />
@@ -47,7 +47,7 @@ const PatternTypes = () => {
         textAlign={{ base: 'left', sm: 'center' }}
         my="32px"
       >
-        Также бот распознает такие редкие паттерны как:
+        {t('ADDITIONAL_PATTERNS')}:
       </Text>
       {isLessThan768 ? (
         <MobileCards cardList={patternCards} />
