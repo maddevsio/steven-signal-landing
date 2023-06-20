@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-i18next.config.mts"
-  ],
+, "src/pages/_document.tsx"  ],
   "exclude": ["node_modules"]
 }

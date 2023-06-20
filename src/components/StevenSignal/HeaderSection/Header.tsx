@@ -1,16 +1,23 @@
 import HeaderLogo from '@/components/StevenSignal/HeaderSection/Logo'
-import SelectLanguage from '@/components/StevenSignal/HeaderSection/SelectLanguage'
 import { ArrowDownIcon } from '@chakra-ui/icons'
 import { Box, Center, Flex, Link, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+import i18nextConfig from '../../../../next-i18next.config'
+import LanguageSwitchLink from './SelectLanguage'
 
 const Header = () => {
   const { t } = useTranslation()
+  const router = useRouter()
+  const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 
   return (
     <Box as="header">
       <Flex justifyContent="flex-end" py="26px">
-        <SelectLanguage />
+        {i18nextConfig.i18n.locales.map((locale) => {
+          if (locale === currentLocale) return null
+          return <LanguageSwitchLink locale={locale} key={locale} />
+        })}
       </Flex>
       <Box mt="24px">
         <HeaderLogo />
