@@ -1,23 +1,23 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getFooterItems = (t: (s: string) => void) => [
+export const footerItems = [
   {
-    title: t('FOOTER_FIRST_ITEM_TITLE'),
-    description: t('FOOTER_FIRST_ITEM_DESCRIPTION'),
+    title: 'FOOTER_FIRST_ITEM_TITLE',
+    description: 'FOOTER_FIRST_ITEM_DESCRIPTION',
     arrow: true,
   },
   {
-    title: t('FOOTER_SECOND_ITEM_TITLE'),
-    description: t('FOOTER_SECOND_ITEM_DESCRIPTION'),
+    title: 'FOOTER_SECOND_ITEM_TITLE',
+    description: 'FOOTER_SECOND_ITEM_DESCRIPTION',
     arrow: true,
   },
   {
-    title: t('FOOTER_THIRD_ITEM_TITLE'),
-    description: t('FOOTER_THIRD_ITEM_DESCRIPTION'),
+    title: 'FOOTER_THIRD_ITEM_TITLE',
+    description: 'FOOTER_THIRD_ITEM_DESCRIPTION',
     arrow: true,
   },
   {
-    title: t('FOOTER_FOURTH_ITEM_TITLE'),
-    description: t('FOOTER_FOURTH_ITEM_DESCRIPTION'),
+    title: 'FOOTER_FOURTH_ITEM_TITLE',
+    description: 'FOOTER_FOURTH_ITEM_DESCRIPTION',
     arrow: false,
   },
 ]

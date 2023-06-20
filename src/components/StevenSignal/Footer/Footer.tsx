@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Image, Link, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
-import { getFooterItems } from './footerData'
+import { footerItems } from './footerData'
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -26,7 +26,7 @@ const Footer = () => {
           direction={{ base: 'column', md: 'row' }}
           mb="83px"
         >
-          {getFooterItems(t).map(({ title, description, arrow }, index) => (
+          {footerItems.map(({ title, description, arrow }, index) => (
             <Flex
               key={index}
               gap="29px"
@@ -48,7 +48,7 @@ const Footer = () => {
                   lineHeight="29px"
                   color="#fff"
                 >
-                  {title}
+                  {t(title)}
                 </Text>
                 <Text
                   color="#6F6A6A"
@@ -56,7 +56,7 @@ const Footer = () => {
                   fontSize="18px"
                   lineHeight="22px"
                 >
-                  {description}
+                  {t(description)}
                 </Text>
               </Flex>
               {arrow ? (
