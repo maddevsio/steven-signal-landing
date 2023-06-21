@@ -1,18 +1,17 @@
 FROM node:18.12.1-alpine3.17 AS build
 
-WORKDIR /home/node/app
+WORKDIR /app
 
 COPY . .
 
 RUN yarn install
+RUN yarn build
 
-FROM node:18.12.1-alpine3.17
-COPY --from=build --chown=node /home/node/app /home/node/app
+FROM nginxinc/nginx-unprivileged:1.24.0-alpine
 
-WORKDIR /home/node/app
+COPY --from=build /app/out /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-USER node
+EXPOSE 80
 
-EXPOSE 3000
-
-CMD ["yarn", "dev"]
+CMD ["nginx", "-g", "daemon off;"]
