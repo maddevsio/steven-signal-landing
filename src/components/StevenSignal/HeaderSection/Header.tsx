@@ -19,7 +19,7 @@ const Header = () => {
   }
 
   return (
-    <Box as="header">
+    <header>
       <Flex justifyContent="flex-end" py="26px">
         <Select
           value={currentLocale}
@@ -64,7 +64,7 @@ const Header = () => {
           {t('TRY_FOR_FREE_LINK')}
         </Link>
       </Center>
-    </Box>
+    </header>
   )
 }
 
