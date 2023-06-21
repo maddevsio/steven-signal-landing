@@ -4,7 +4,7 @@ import { Box, Center, Flex, Link, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import i18nextConfig from '../../../../next-i18next.config'
-import LanguageSwitchLink from './SelectLanguage'
+import LanguageSwitchLink from './LanguageSwitchLinkProps'
 
 const Header = () => {
   const { t } = useTranslation()

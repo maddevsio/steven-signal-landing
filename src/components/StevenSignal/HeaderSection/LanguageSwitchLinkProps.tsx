@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FC } from 'react'
 
 declare const languageDetector: {
   cache: (locale: string) => void
@@ -10,7 +11,7 @@ interface LanguageSwitchLinkProps {
   href?: string
 }
 
-const LanguageSwitchLink: React.FC<LanguageSwitchLinkProps> = ({
+const LanguageSwitchLink: FC<LanguageSwitchLinkProps> = ({
   locale,
   ...rest
 }) => {
@@ -31,7 +32,7 @@ const LanguageSwitchLink: React.FC<LanguageSwitchLinkProps> = ({
 
   return (
     <Link href={href} onClick={() => languageDetector?.cache(locale)}>
-      <button style={{ fontSize: 'small' }}>{locale}</button>
+      <button style={{ fontSize: 'md' }}>{locale}</button>
     </Link>
   )
 }
