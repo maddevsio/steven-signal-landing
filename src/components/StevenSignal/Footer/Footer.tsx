@@ -79,7 +79,7 @@ const Footer = () => {
           mb="56px"
         >
           <Link
-            href="https://google.com/"
+            href="https://t.me/steven_signal_bot"
             isExternal
             p="16px"
             bg="#3475EF"
