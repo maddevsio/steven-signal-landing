@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  steven-signal-landing:
+    build: .
+    container_name: steven-signal-landing
+    restart: always
+    ports:
+      - "3010:3000"
+    command: yarn dev
