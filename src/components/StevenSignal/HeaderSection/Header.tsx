@@ -32,7 +32,7 @@ const Header = () => {
           {t('MAIN_TITLE')}
         </Text>
       </Box>
-      <Center mt={{ base: '91px', md: '141px' }}>
+      <Center mt={{ base: '103px', md: '121px' }}>
         <Link
           textColor="#3475EF"
           fontWeight={500}

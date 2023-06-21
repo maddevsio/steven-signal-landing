@@ -2,28 +2,25 @@ import { Image, useMediaQuery } from '@chakra-ui/react'
 import { Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-// import required modules
+const desktopSlides = ['first', 'second', 'third', 'fourth', 'fifth']
+const smallScreenSlides = [
+  'first_small',
+  'second_small',
+  'third_small',
+  'fourth_small',
+  'fifth_small',
+]
 
 const Slider = () => {
-  const desktopSlides = ['first', 'second', 'third', 'fourth', 'fifth']
-  const smallScreenSlides = [
-    'first_small',
-    'second_small',
-    'third_small',
-    'fourth_small',
-    'fifth_small',
-  ]
   const [isLessThan768] = useMediaQuery('(max-width: 768px)')
-
   return (
     <>
       {isLessThan768 ? (
         <Swiper
-          slidesPerView={1}
+          slidesPerView="auto"
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
