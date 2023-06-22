@@ -6,4 +6,4 @@ services:
     container_name: steven-signal-landing-test
     restart: always
     ports:
-      - "localhost:3011:80"
+      - 3011:80
