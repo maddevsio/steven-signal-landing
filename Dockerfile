@@ -7,7 +7,7 @@ COPY . .
 RUN yarn install
 RUN yarn build
 
-FROM nginxinc/nginx-unprivileged:1.24.0-alpine
+FROM nginx:1.24.0-alpine
 
 COPY --from=build /app/out /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
