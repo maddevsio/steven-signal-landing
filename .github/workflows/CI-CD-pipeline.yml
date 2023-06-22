@@ -3,7 +3,7 @@ name: deploy-in-docker-mo-759
 on:
   push:
     branches:
-      - deploy-in-docker-mo-759
+      - main
 
 jobs:
   build:
