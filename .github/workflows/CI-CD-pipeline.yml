@@ -24,54 +24,50 @@ jobs:
         run: |
           echo "IMAGE_TAG=${{ env.SHORT_SHA }}" >> $GITHUB_ENV
           
-#       - name: Checkout
-#         uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-#       - name: Login to GitHub Container Registry
-#         uses: docker/login-action@v2
-#         with:
-#           registry: ${{ env.REGISTRY }}
-#           username: ${{ github.actor }}
-#           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
         
-#       - name: Build and push Docker image
-#         uses: docker/build-push-action@v4
-#         with:
-#           push: true
-#           tags: "${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}"
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: "${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}"
           
-#       - name: set environment variables to env file
-#         run: |
-#           echo "REGISTRY=${{ env.REGISTRY }}" > .env
-#           echo "REPOSITORY=${{ env.REPOSITORY }}" >> .env
-#           echo "TAG=${{ env.IMAGE_TAG }}" >> .env
+      - name: set environment variables to env file
+        run: |
+          echo "REGISTRY=${{ env.REGISTRY }}" > .env
+          echo "REPOSITORY=${{ env.REPOSITORY }}" >> .env
+          echo "TAG=${{ env.IMAGE_TAG }}" >> .env
 
-#       - name: copy docker-compose and environment variables to server
-#         uses: appleboy/scp-action@v0.1.4
-#         with:
-#           host:     ${{ secrets.REMOTE_SERVER_HOSTNAME }}
-#           username: ${{ secrets.REMOTE_SERVER_USERNAME }}
-#           key:      ${{ secrets.SSH_PRIVATE_KEY }}
-#           port:     ${{ secrets.REMOTE_SSH_PORT }}
-#           source: "docker-compose.yml,.env"
-#           target: "/opt/docker/steven-signal-landing"
+      - name: copy docker-compose and environment variables to server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host:     ${{ secrets.REMOTE_SERVER_HOSTNAME }}
+          username: ${{ secrets.REMOTE_SERVER_USERNAME }}
+          key:      ${{ secrets.SSH_PRIVATE_KEY }}
+          port:     ${{ secrets.REMOTE_SSH_PORT }}
+          source: "docker-compose.yml,.env"
+          target: "/opt/docker/steven-signal-landing"
+      
       
       - name: Deploy to remote server
         env:
-          SSH_KEY   : ${{ secrets.EC2_SSH_KEY }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh/
-          echo "secrets.SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ secrets.REMOTE_SERVER_HOSTNAME }} > ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no -i "~/.ssh/id_ed25519" ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOSTNAME }} -p ${{ secrets.REMOTE_SSH_PORT }} '
             cd /opt/docker/steven-signal-landing
-            pwd
-            ls
+            docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+            docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
+            docker compose up -d
             '
-
-#           docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-#           docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
-#           docker compose up -d
-#           '
             
