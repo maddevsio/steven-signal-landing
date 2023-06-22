@@ -63,7 +63,7 @@ jobs:
           mkdir -p ~/.ssh/
           echo "secrets.SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh -o StrictHostKeyChecking=no -i "~/.ssh/id_ed25519" ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOSTNAME }} -p ${{ secrets.REMOTE_SSH_PORT }} '
+          ssh -o StrictHostKeyChecking=no -i "~/.ssh/id_ed25519" ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOSTNAME }} -p ${{ secrets.REMOTE_SSH_PORT }} -vvv '
             cd /opt/docker/steven-signal-landing
             pwd
             ls
