@@ -3,7 +3,7 @@ version: '3'
 services:
   steven-signal-landing:
     image: ${REGISTRY}/${REPOSITORY}:${TAG}
-    container_name: steven-signal-landing
+    container_name: steven-signal-landing-test
     restart: always
     ports:
-      - "127.0.0.1:3010:80"
+      - "localhost:3011:80"
