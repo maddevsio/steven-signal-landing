@@ -2,7 +2,9 @@ version: '3'
 
 services:
   steven-signal-landing:
-    build: .
+    env_file:
+      - .env
+    image: ${CI_REGISTRY}/${CI_REPOSITORY}:${CI_TAG}
     container_name: steven-signal-landing
     restart: always
     ports:
