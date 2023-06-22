@@ -17,7 +17,7 @@ jobs:
       REGISTRY: ghcr.io
       REPOSITORY: ${{ github.repository }}
       IMAGE_TAG: ${GITHUB_SHA:0:8}
-      
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,39 +28,42 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
-
+          
       - name: set environment variables
         run: |
           echo "REGISTRY={{ env.REGISTRY }}" > .env
           echo "REPOSITORY=${{ env.REPOSITORY }}" >> .env
           echo "TAG=${{ env.IMAGE_TAG }}" >> .env
-
-      - name: copy docker-compose and environment variables to server
-        uses: appleboy/scp-action@v0.1.4
+          cat .env
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
         with:
-          host:     ${{ secrets.REMOTE_SERVER_HOSTNAME }}
-          username: ${{ secrets.REMOTE_SERVER_USERNAME }}
-          key:      ${{ secrets.SSH_PRIVATE_KEY }}
-          port:     ${{ secrets.REMOTE_SSH_PORT }}
-          source: "docker-compose-remote.yml,.env"
-          target: "/opt/docker/steven-signal-landing"
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${IMAGE_TAG}
+
+
+
+#       - name: copy docker-compose and environment variables to server
+#         uses: appleboy/scp-action@v0.1.4
+#         with:
+#           host:     ${{ secrets.REMOTE_SERVER_HOSTNAME }}
+#           username: ${{ secrets.REMOTE_SERVER_USERNAME }}
+#           key:      ${{ secrets.SSH_PRIVATE_KEY }}
+#           port:     ${{ secrets.REMOTE_SSH_PORT }}
+#           source: "docker-compose-remote.yml,.env"
+#           target: "/opt/docker/steven-signal-landing"
       
-      - name: Deploy to remote server
-        env:
-          SSH_KEY   : ${{ secrets.EC2_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "secrets.SSH_PRIVATE_KEY" > ~/.ssh/ssh_key
-          chmod 600 ~/.ssh/ssh_key
-          ssh -o StrictHostKeyChecking=no -i "~/.ssh/ssh_key" ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOSTNAME }} -p ${{ secrets.REMOTE_SSH_PORT }} '
-            cd /opt/docker/steven-signal-landing
-            docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-            docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
-            docker compose up -d
-            '
+#       - name: Deploy to remote server
+#         env:
+#           SSH_KEY   : ${{ secrets.EC2_SSH_KEY }}
+#         run: |
+#           mkdir -p ~/.ssh/
+#           echo "secrets.SSH_PRIVATE_KEY" > ~/.ssh/ssh_key
+#           chmod 600 ~/.ssh/ssh_key
+#           ssh -o StrictHostKeyChecking=no -i "~/.ssh/ssh_key" ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOSTNAME }} -p ${{ secrets.REMOTE_SSH_PORT }} '
+#             cd /opt/docker/steven-signal-landing
+#             docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+#             docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
+#             docker compose up -d
+#             '
