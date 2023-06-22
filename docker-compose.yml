@@ -6,4 +6,4 @@ services:
     container_name: steven-signal-landing
     restart: always
     ports:
-      - "3010:80"
+      - "127.0.0.1:3010:80"
