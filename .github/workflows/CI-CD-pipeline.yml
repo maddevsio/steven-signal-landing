@@ -68,6 +68,6 @@ jobs:
             cd /opt/docker/steven-signal-landing
             docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
-            docker compose up -d
+            docker-compose up -d
             '
             
