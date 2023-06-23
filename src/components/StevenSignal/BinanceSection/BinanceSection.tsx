@@ -3,7 +3,7 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 
 const BinanceSection = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation(['common'])
   return (
     <Box
       py={{ base: '32px', md: '40px' }}

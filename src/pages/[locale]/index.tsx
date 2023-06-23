@@ -9,9 +9,6 @@ import TextSection from '@/components/StevenSignal/TextSection'
 import { Box, Container, Flex } from '@chakra-ui/react'
 import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 
-const getStaticProps = makeStaticProps(['common'])
-export { getStaticPaths, getStaticProps }
-
 const StevenSignal = () => (
   <>
     <Container maxW="1164px">
@@ -32,3 +29,6 @@ const StevenSignal = () => (
 )
 
 export default StevenSignal
+
+const getStaticProps = makeStaticProps()
+export { getStaticPaths, getStaticProps }

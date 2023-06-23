@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 
 const TextSection = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation(['common'])
   return (
     <Box bg="#000" borderRadius="16px" py="24px" px="26px" textAlign="center">
       <Text
