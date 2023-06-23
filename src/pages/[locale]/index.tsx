@@ -30,5 +30,5 @@ const StevenSignal = () => (
 
 export default StevenSignal
 
-const getStaticProps = makeStaticProps(['common', '404'])
+const getStaticProps = makeStaticProps(['common'])
 export { getStaticPaths, getStaticProps }
