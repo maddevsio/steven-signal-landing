@@ -1,6 +1,9 @@
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { Link } from '@chakra-ui/react'
 
+const getStaticProps = makeStaticProps()
+export { getStaticPaths, getStaticProps }
+
 const Homepage = () => {
   return (
     <>
@@ -16,6 +19,3 @@ const Homepage = () => {
 }
 
 export default Homepage
-
-const getStaticProps = makeStaticProps()
-export { getStaticPaths, getStaticProps }

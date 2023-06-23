@@ -1,6 +1,6 @@
+import languageDetector from '@/lib/languageDetector'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import languageDetector from './languageDetector'
 
 export const useRedirect = (to) => {
   const router = useRouter()
