@@ -5,12 +5,10 @@ import { useEffect } from 'react'
 export const useRedirect = (to) => {
   const router = useRouter()
   to = to || router.asPath
-  debugger
-
   // language detection
   useEffect(() => {
     const detectedLng = languageDetector.detect()
-
+    console.log({ detectedLng, route: router.route })
     if (to.startsWith('/' + detectedLng) && router.route === '/404') {
       router.replace('/' + detectedLng + router.route)
       return
