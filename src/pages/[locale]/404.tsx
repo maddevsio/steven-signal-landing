@@ -5,7 +5,7 @@ import Header from '@/components/StevenSignal/HeaderSection'
 import LinkComponent from '@/components/shared/Link'
 
 const Homepage = () => {
-  const { t } = useTranslation(['404', 'common'])
+  const { t } = useTranslation(['404'])
 
   return (
     <>
@@ -13,7 +13,7 @@ const Homepage = () => {
         <Header />
         <div>
           <LinkComponent href="/">
-            <button type="button">{t('404:HOME_LINK')}</button>
+            <button type="button">{t('HOME_LINK')}</button>
           </LinkComponent>
         </div>
       </main>
