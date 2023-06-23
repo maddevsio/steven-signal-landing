@@ -3,7 +3,7 @@ import { Flex, Text } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 
 const HeaderLogo = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation('common')
 
   return (
     <Flex direction="column" alignItems="center" gap="16px">

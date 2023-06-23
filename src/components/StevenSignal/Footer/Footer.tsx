@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next'
 import { footerItems } from './footerData'
 
 const Footer = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation('common')
 
   return (
     <Box as="footer" mt="32px" bg="#121212" pt={{ base: '32px', md: '64px' }}>

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import i18nextConfig from '../../../../next-i18next.config'
 
 const Header = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation('common')
   const router = useRouter()
   const currentLocale = router.query.locale || i18nextConfig.i18n.defaultLocale
 

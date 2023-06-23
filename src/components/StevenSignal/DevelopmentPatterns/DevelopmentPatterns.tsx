@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee'
 import { firstList, secondList } from './patternsData'
 
 const DevelopmentPatterns = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation('common')
 
   return (
     <Flex
