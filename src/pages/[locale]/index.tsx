@@ -9,7 +9,7 @@ import TextSection from '@/components/StevenSignal/TextSection'
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { Box, Container, Flex } from '@chakra-ui/react'
 
-const getStaticProps = makeStaticProps()
+const getStaticProps = makeStaticProps(['common'])
 export { getStaticPaths, getStaticProps }
 
 const StevenSignal = () => (
