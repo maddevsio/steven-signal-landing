@@ -1,8 +1,9 @@
+import HeaderLogo from '@/components/StevenSignal/HeaderSection/Logo'
 import { useTranslation } from 'next-i18next'
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 
-import Header from '@/components/StevenSignal/HeaderSection'
 import LinkComponent from '@/components/shared/Link'
+import { Box, Flex } from '@chakra-ui/react'
 
 const Homepage = () => {
   const { t } = useTranslation(['404'])
@@ -10,12 +11,16 @@ const Homepage = () => {
   return (
     <>
       <main>
-        <Header />
-        <div>
-          <LinkComponent href="/">
-            <button type="button">{t('HOME_LINK')}</button>
-          </LinkComponent>
-        </div>
+        <Flex mt="24px" direction="column" gap="10px">
+          <HeaderLogo />
+          <Box textAlign="center">
+            <LinkComponent href="/">
+              <button type="button" color="#00f">
+                {t('HOME_LINK')}
+              </button>
+            </LinkComponent>
+          </Box>
+        </Flex>
       </main>
     </>
   )
@@ -23,5 +28,5 @@ const Homepage = () => {
 
 export default Homepage
 
-const getStaticProps = makeStaticProps(['404', 'common'])
+const getStaticProps = makeStaticProps(['common', '404'])
 export { getStaticPaths, getStaticProps }
