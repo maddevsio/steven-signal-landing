@@ -9,6 +9,7 @@ export const useRedirect = (to) => {
   useEffect(() => {
     const detectedLng = languageDetector.detect()
     if (to.startsWith('/' + detectedLng)) {
+      console.log({ to, detectedLng, router: router.route })
       // && router.route === '/404'
       router.replace('/' + detectedLng + router.route)
       return
