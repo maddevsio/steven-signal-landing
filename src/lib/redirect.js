@@ -10,12 +10,22 @@ export const useRedirect = (to) => {
   useEffect(() => {
     const detectedLng = languageDetector.detect()
     if (to.startsWith('/' + detectedLng) && router.route === '/404') {
-      console.log({ to, detectedLng, route: router.route })
+      console.log('first', {
+        to,
+        detectedLng,
+        route: router.route,
+        asPath: router.asPath,
+      })
       // prevent endless loop
       router.replace('/' + detectedLng + router.route)
       return
     }
-    console.log({ to, detectedLng, route: router.route })
+    console.log('second: ', {
+      to,
+      detectedLng,
+      route: router.route,
+      asPath: router.asPath,
+    })
     languageDetector.cache(detectedLng)
     router.replace('/' + detectedLng + to)
   })
