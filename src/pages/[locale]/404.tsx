@@ -1,5 +1,5 @@
+import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { Link } from '@chakra-ui/react'
-import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 
 const Homepage = () => {
   return (

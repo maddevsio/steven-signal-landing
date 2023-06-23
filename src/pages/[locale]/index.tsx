@@ -6,8 +6,8 @@ import Header from '@/components/StevenSignal/HeaderSection'
 import PatternTypes from '@/components/StevenSignal/PatternTypes'
 import RecognizablePatterns from '@/components/StevenSignal/RecognizablePatterns'
 import TextSection from '@/components/StevenSignal/TextSection'
+import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { Box, Container, Flex } from '@chakra-ui/react'
-import { getStaticPaths, makeStaticProps } from '../../../lib/getStatic'
 
 const StevenSignal = () => (
   <>

@@ -6,7 +6,7 @@ const RecognizablePatterns = () => {
   const {
     t,
     i18n: { resolvedLanguage },
-  } = useTranslation('common')
+  } = useTranslation()
 
   return (
     <Flex

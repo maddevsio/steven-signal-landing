@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import Slider from './Slider'
 
 const AboutBotSection = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation()
 
   return (
     <Box

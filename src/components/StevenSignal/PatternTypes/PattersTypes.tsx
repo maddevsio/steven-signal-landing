@@ -4,7 +4,7 @@ import { DesktopCards, MobileCards } from './Cards'
 import { patternCards, сards } from './cardsData'
 
 const PatternTypes = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation()
   const [isLessThan768] = useMediaQuery('(max-width: 768px)')
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
