@@ -48,7 +48,7 @@ const Header = () => {
         >
           {t('MAIN_TITLE')}{' '}
           <Text as="span" color="#3474ef">
-            Telegram.
+            Telegram
           </Text>
         </Text>
       </Box>
