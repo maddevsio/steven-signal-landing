@@ -5,7 +5,6 @@ import HeaderLogo from './Logo'
 
 const Header = () => {
   const { t } = useTranslation()
-
   return (
     <header>
       <Flex>
@@ -22,10 +21,10 @@ const Header = () => {
           }}
         >
           <li>
-            <LanguageSwitcher lang="en">EN</LanguageSwitcher>
+            <LanguageSwitcher lang="en">EN </LanguageSwitcher>
           </li>
           <li>
-            <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
+            <LanguageSwitcher lang="ru">RU </LanguageSwitcher>
           </li>
         </ul>
       </Flex>
