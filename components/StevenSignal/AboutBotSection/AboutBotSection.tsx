@@ -1,11 +1,11 @@
-import CustomIcon from '@/components/shared/CustomIcon'
-import IconText from '@/components/shared/IconText'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
+import CustomIcon from '../../shared/CustomIcon'
+import IconText from '../../shared/IconText'
 import Slider from './Slider'
 
 const AboutBotSection = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation()
 
   return (
     <Box

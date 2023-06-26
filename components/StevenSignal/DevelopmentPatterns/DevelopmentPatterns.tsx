@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import Marquee from 'react-fast-marquee'
 import { firstList, secondList } from './patternsData'
 

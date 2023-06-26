@@ -1,9 +1,8 @@
-import '@/styles/_global.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import { appWithTranslation } from 'next-i18next'
 import { type AppProps } from 'next/app'
 import Head from 'next/head'
 import { ReactElement } from 'react'
+import '../styles/_global.css'
 
 const App = ({ Component, pageProps }: AppProps): ReactElement => (
   <>
@@ -17,4 +16,4 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => (
   </>
 )
 
-export default appWithTranslation(App)
+export default App

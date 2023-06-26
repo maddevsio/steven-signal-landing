@@ -11,6 +11,11 @@
   "CRYPTO_TRADERS_DESCRIPTION": "The project assumption is that it will be used by crypto traders and crypto investors, as the bot analyzes data from Binance.",
   "TOKENIZED_ASSETS": "However, if you trade or invest in stocks, you may want to consider connecting tokenized assets such as Gold by selecting a PAXG/USDT pair.",
   "RECOGNIZABLE_PATTERNS_TITLE": "Recognizable patterns",
+  "RECOGNIZABLE_PATTERNS_LIST": [
+    "Candlestick patterns",
+    "Smart Money patterns",
+    "Figure patterns"
+  ],
   "PATTERN_TYPES_TITLE": "Types of recognized patterns",
   "ADDITIONAL_PATTERNS": "The bot also recognizes such rare patterns as",
   "DEVELOPMENT_PATTERNS_TITLE": "Patterns in development",

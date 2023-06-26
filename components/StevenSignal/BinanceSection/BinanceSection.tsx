@@ -1,6 +1,6 @@
-import CustomIcon from '@/components/shared/CustomIcon'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
+import CustomIcon from '../../shared/CustomIcon'
 
 const BinanceSection = () => {
   const { t } = useTranslation()

@@ -1,12 +1,9 @@
-import CustomIcon from '@/components/shared/CustomIcon'
-import { Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { Flex, Image, Text } from '@chakra-ui/react'
+import { useTranslation } from 'next-export-i18n'
+import CustomIcon from '../../shared/CustomIcon'
 
 const RecognizablePatterns = () => {
-  const {
-    t,
-    i18n: { resolvedLanguage },
-  } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <Flex
@@ -32,14 +29,19 @@ const RecognizablePatterns = () => {
         >
           {t('RECOGNIZABLE_PATTERNS_TITLE')}
         </Text>
-        <CustomIcon
-          imageSrc={
-            resolvedLanguage === 'ru'
-              ? './assets/images/svg/patterns-list.svg'
-              : './assets/images/svg/patterns-list-en.svg'
-          }
-          alt="List"
-        />
+        <Flex>
+          <ul style={{ listStyle: 'none', color: '#fff' }}>
+            {Array.from(
+              t('RECOGNIZABLE_PATTERNS_LIST'),
+              (item: string, index: number) => (
+                <li style={{ display: 'flex', gap: '16px' }} key={index}>
+                  <Image src="/assets/images/arrow-right.svg" alt="arrow" />
+                  {item}
+                </li>
+              )
+            )}
+          </ul>
+        </Flex>
       </Flex>
       <CustomIcon
         imageSrc="./assets/images/svg/recognizable-patterns.svg"

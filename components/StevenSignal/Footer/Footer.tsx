@@ -1,5 +1,5 @@
 import { Box, Container, Flex, Image, Link, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 import { footerItems } from './footerData'
 
 const Footer = () => {

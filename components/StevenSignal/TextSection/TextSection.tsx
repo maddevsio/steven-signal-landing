@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
 
 const TextSection = () => {
   const { t } = useTranslation()

@@ -1,9 +1,9 @@
-import Logo from '@/components/shared/Logo'
 import { Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-export-i18n'
+import Logo from '../../shared/Logo'
 
 const HeaderLogo = () => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation()
 
   return (
     <Flex direction="column" alignItems="center" gap="16px">
