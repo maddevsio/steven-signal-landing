@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn yaml2json && next dev",
+    "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "yaml2json": "npx yaml2json ./i18n --pretty --save --recursive",
-    "export": "yarn yaml2json && next build && next export && npx serve ./out"
+    "export": "next build && next export && npx serve ./out"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
@@ -33,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "eslint-config-prettier": "^8.8.0",
     "next-export-i18n": "^2.1.0",
-    "prettier": "^2.8.8",
-    "yamljs": "^0.3.0"
+    "prettier": "^2.8.8"
   }
 }
