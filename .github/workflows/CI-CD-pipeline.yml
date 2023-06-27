@@ -68,4 +68,5 @@ jobs:
             docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
             docker-compose up -d
+            docker image prune --filter="label=metaimagename=steven-signal-landing" -a -f
             '
