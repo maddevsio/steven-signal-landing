@@ -17,34 +17,28 @@ const StevenSignal = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('')
 
   const getMeta = (currentLanguage: string) => {
-    switch (currentLanguage) {
-      case 'en':
-      case '':
-        return (
-          <>
-            <title>
-              Steven Signal - AI bot for crypto traders and investors
-            </title>
-            <meta
-              name="description"
-              content="Steven Signal is an AI-based bot that detects trading patterns and alerts you via Telegram."
-            />
-          </>
-        )
-      case 'ru':
-        return (
-          <>
-            <title>
-              Стивен Сигнал - AI бот для крипто-трейдеров и инвесторов
-            </title>
-            <meta
-              name="description"
-              content="Steven Signal - бот на основе ИИ, который распознает торговые паттерны и высылает вам сигналы в Telegram."
-            />
-          </>
-        )
-      default:
-        return null
+    if (!currentLanguage || currentLanguage === 'en') {
+      return (
+        <>
+          <title>Steven Signal - AI bot for crypto traders and investors</title>
+          <meta
+            name="description"
+            content="Steven Signal is an AI-based bot that detects trading patterns and alerts you via Telegram."
+          />
+        </>
+      )
+    } else if (currentLanguage === 'ru') {
+      return (
+        <>
+          <title>
+            Стивен Сигнал - AI бот для крипто-трейдеров и инвесторов
+          </title>
+          <meta
+            name="description"
+            content="Steven Signal - бот на основе ИИ, который распознает торговые паттерны и высылает вам сигналы в Telegram."
+          />
+        </>
+      )
     }
   }
 
