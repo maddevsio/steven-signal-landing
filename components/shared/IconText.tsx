@@ -10,7 +10,7 @@ interface IIconText {
 
 const IconText: FC<IIconText> = ({ imagePath, title, alt }) => (
   <Flex gap={5} alignItems="center">
-    <CustomIcon imageSrc={imagePath} alt={alt || 'Image'} />
+    <CustomIcon imageSrc={imagePath} alt={alt || 'landing image'} />
     <Text
       fontWeight={{ base: '700', md: '900' }}
       fontSize={{ base: '24px', md: '40px' }}

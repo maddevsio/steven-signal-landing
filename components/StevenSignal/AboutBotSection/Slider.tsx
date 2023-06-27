@@ -38,7 +38,7 @@ const Slider = () => {
             <SwiperSlide key={index}>
               <Image
                 src={`./assets/images/header-slider/${slide}.svg`}
-                alt={`Slide ${slide}`}
+                alt="landing image"
               />
             </SwiperSlide>
           ))}
@@ -59,7 +59,7 @@ const Slider = () => {
             <SwiperSlide key={index}>
               <Image
                 src={`./assets/images/header-slider/${slide}.svg`}
-                alt={`Slide ${slide}`}
+                alt="landing image"
               />
             </SwiperSlide>
           ))}

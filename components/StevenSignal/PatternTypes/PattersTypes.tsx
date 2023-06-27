@@ -55,7 +55,7 @@ const PatternTypes = () => {
         <Flex gap="16px">
           {patternCards.map((pattern, index) => (
             <Flex direction="column" gap="8px" key={index}>
-              <Image src={pattern.image} alt={pattern.title} />
+              <Image src={pattern.image} alt="landing image" />
               <Text
                 py="15px"
                 fontWeight={700}

@@ -13,7 +13,7 @@ interface ICustomIcon {
 
 const CustomIcon: FC<ICustomIcon> = ({
   imageSrc,
-  alt,
+  alt = 'landing image',
   width = 'auto',
   height = 'auto',
   ...props

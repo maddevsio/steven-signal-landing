@@ -35,7 +35,10 @@ const RecognizablePatterns = () => {
               t('RECOGNIZABLE_PATTERNS_LIST'),
               (item: string, index: number) => (
                 <li style={{ display: 'flex', gap: '16px' }} key={index}>
-                  <Image src="/assets/images/arrow-right.svg" alt="arrow" />
+                  <Image
+                    src="/assets/images/arrow-right.svg"
+                    alt="landing image"
+                  />
                   {item}
                 </li>
               )

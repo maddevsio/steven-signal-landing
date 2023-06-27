@@ -64,7 +64,7 @@ const Footer = () => {
                   w="25px"
                   h="25px"
                   src="./assets/images/svg/footer-arrow.svg"
-                  alt="Footer arrow"
+                  alt="landing image"
                   transform={{ base: 'rotate(90deg)', md: 'rotate(0)' }}
                 />
               ) : null}
@@ -97,7 +97,7 @@ const Footer = () => {
           >
             <Image
               src="./assets/images/svg/telegram.svg"
-              alt="Telegram Icon"
+              alt="landing image"
               display="inline"
               w="26px"
               h="22px"
@@ -114,7 +114,7 @@ const Footer = () => {
             {t('FOOTER_SECONDARY_TEXT')}
             <Image
               src="./assets/images/svg/top-arrow.svg"
-              alt="Top arrow"
+              alt="landing image"
               position="absolute"
               right="-20%"
               top="-65%"

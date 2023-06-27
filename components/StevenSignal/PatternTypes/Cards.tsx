@@ -29,7 +29,7 @@ const MobileCards = ({ cardList }: any) => (
           </AccordionButton>
         </h2>
         <AccordionPanel px="0">
-          <Image src={card.image} alt={card.image} w="100%" />
+          <Image src={card.image} alt="landing image" w="100%" />
         </AccordionPanel>
       </AccordionItem>
     ))}
@@ -43,7 +43,7 @@ const DesktopCards = ({ cardList }: any) => (
         <Text fontWeight={700} fontSize="20px" lineHeight="24px">
           {card.title}
         </Text>
-        <Image src={card.image} alt={card.image} w="100%" />
+        <Image src={card.image} alt="landing image" w="100%" />
       </Flex>
     ))}
   </Flex>
