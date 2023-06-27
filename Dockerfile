@@ -8,6 +8,7 @@ RUN yarn install
 RUN yarn build
 
 FROM nginx:1.24.0-alpine
+LABEL metaimagename=steven-signal-landing
 
 COPY --from=build /app/out /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
