@@ -12,6 +12,8 @@ import PatternTypes from '../components/StevenSignal/PatternTypes'
 import RecognizablePatterns from '../components/StevenSignal/RecognizablePatterns'
 import TextSection from '../components/StevenSignal/TextSection'
 
+import { indexPage } from './metadata'
+
 const StevenSignal = () => {
   const router = useRouter()
   const [selectedLanguage, setSelectedLanguage] = useState('')
@@ -20,23 +22,15 @@ const StevenSignal = () => {
     if (!currentLanguage || currentLanguage === 'en') {
       return (
         <>
-          <title>Steven Signal - AI bot for crypto traders and investors</title>
-          <meta
-            name="description"
-            content="Steven Signal is an AI-based bot that detects trading patterns and alerts you via Telegram."
-          />
+          <title>{indexPage.en.title}</title>
+          <meta name="description" content={indexPage.en.description} />
         </>
       )
     } else if (currentLanguage === 'ru') {
       return (
         <>
-          <title>
-            Стивен Сигнал - AI бот для крипто-трейдеров и инвесторов
-          </title>
-          <meta
-            name="description"
-            content="Steven Signal - бот на основе ИИ, который распознает торговые паттерны и высылает вам сигналы в Telegram."
-          />
+          <title>{indexPage.ru.title}</title>
+          <meta name="description" content={indexPage.ru.description} />
         </>
       )
     }
