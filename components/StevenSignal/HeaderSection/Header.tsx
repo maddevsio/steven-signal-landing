@@ -1,32 +1,50 @@
-import { ArrowDownIcon } from '@chakra-ui/icons'
-import { Box, Center, Flex, Link, Text } from '@chakra-ui/react'
-import { LanguageSwitcher, useTranslation } from 'next-export-i18n'
+import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import {
+  Box,
+  Center,
+  Flex,
+  Link,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
+  Text,
+} from '@chakra-ui/react'
+import { LanguageSwitcher } from 'next-export-i18n'
+import { useState } from 'react'
+import useTranslation from '../../../utils/useTranslation'
 import HeaderLogo from './Logo'
 
 const Header = () => {
-  const { t } = useTranslation()
+  const [t, currentLang] = useTranslation()
+  const [isClicked, setIsClicked] = useState(false)
+
   return (
     <header>
-      <Flex>
-        <ul
-          style={{
-            listStyle: 'none',
-            display: 'flex',
-            gap: '8px',
-            marginLeft: 'auto',
-            justifyContent: 'flex-end',
-            paddingTop: '26px',
-            paddingBottom: '26px',
-            fontSize: '12px',
-          }}
-        >
-          <li>
-            <LanguageSwitcher lang="en">EN </LanguageSwitcher>
-          </li>
-          <li>
-            <LanguageSwitcher lang="ru">RU </LanguageSwitcher>
-          </li>
-        </ul>
+      <Flex
+        justifyContent="flex-end"
+        paddingTop="26px"
+        paddingBottom="26px"
+        fontSize="12px"
+      >
+        <Menu autoSelect={false}>
+          <MenuButton as="button" onClick={() => setIsClicked(!isClicked)}>
+            <Flex alignItems="center" gap="3px">
+              {currentLang.toUpperCase()}
+              <ChevronDownIcon />
+            </Flex>
+          </MenuButton>
+          <MenuList borderRadius="none">
+            <MenuItem>
+              <LanguageSwitcher lang="en">EN</LanguageSwitcher>
+            </MenuItem>
+            <MenuDivider />
+            <MenuItem>
+              <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
       <Box mt="24px">
         <HeaderLogo />
