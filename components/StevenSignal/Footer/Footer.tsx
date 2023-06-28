@@ -23,8 +23,8 @@ const Footer = () => {
         <Flex
           gap="29px"
           alignItems="flex-start"
-          direction={{ base: 'column', md: 'row' }}
           mb="83px"
+          direction={{ base: 'column', lg: 'row' }}
         >
           {footerItems.map(({ title, description, arrow }, index) => (
             <Flex
