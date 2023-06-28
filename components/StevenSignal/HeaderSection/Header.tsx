@@ -27,7 +27,7 @@ const Header = () => {
         fontSize="12px"
       >
         <Menu autoSelect={false}>
-          <MenuButton as="button">
+          <MenuButton>
             <Flex alignItems="center" gap="3px">
               {currentLang.toUpperCase()}
               <ChevronDownIcon />
@@ -35,11 +35,15 @@ const Header = () => {
           </MenuButton>
           <MenuList borderRadius="none">
             <MenuItem>
-              <LanguageSwitcher lang="en">EN</LanguageSwitcher>
+              <LanguageSwitcher lang="en">
+                <Text w="100%">EN</Text>
+              </LanguageSwitcher>
             </MenuItem>
             <MenuDivider />
             <MenuItem>
-              <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
+              <LanguageSwitcher lang="ru">
+                <Text w="100%">RU</Text>
+              </LanguageSwitcher>
             </MenuItem>
           </MenuList>
         </Menu>
