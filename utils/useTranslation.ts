@@ -5,7 +5,7 @@ import {
 
 type UseTranslation = [
   t: (selector: string) => string,
-  query: 'en' | 'id',
+  query: 'en' | 'ru',
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   trueQuery: any
 ]

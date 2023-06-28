@@ -12,13 +12,11 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { LanguageSwitcher } from 'next-export-i18n'
-import { useState } from 'react'
 import useTranslation from '../../../utils/useTranslation'
 import HeaderLogo from './Logo'
 
 const Header = () => {
   const [t, currentLang] = useTranslation()
-  const [isClicked, setIsClicked] = useState(false)
 
   return (
     <header>
@@ -29,7 +27,7 @@ const Header = () => {
         fontSize="12px"
       >
         <Menu autoSelect={false}>
-          <MenuButton as="button" onClick={() => setIsClicked(!isClicked)}>
+          <MenuButton as="button">
             <Flex alignItems="center" gap="3px">
               {currentLang.toUpperCase()}
               <ChevronDownIcon />
