@@ -8,8 +8,6 @@ const i18n = {
     ru,
   },
   defaultLang: 'en',
-  localeDetection: false,
-  useBrowserDefault: true,
 }
 
 module.exports = i18n
