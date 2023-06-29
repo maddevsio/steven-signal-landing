@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Image, Link, Text } from '@chakra-ui/react'
+import {
+  AbsoluteCenter,
+  Box,
+  Container,
+  Flex,
+  Image,
+  Link,
+  Text,
+} from '@chakra-ui/react'
 import { useTranslation } from 'next-export-i18n'
 import { footerItems } from './footerData'
 
@@ -22,7 +30,7 @@ const Footer = () => {
         </Text>
         <Flex
           gap="29px"
-          alignItems="flex-start"
+          alignItems="stretch"
           mb="83px"
           direction={{ base: 'column', lg: 'row' }}
         >
@@ -30,8 +38,8 @@ const Footer = () => {
             <Flex
               key={index}
               gap="29px"
-              alignItems="center"
-              direction={{ base: 'column', md: 'row' }}
+              alignItems="stretch"
+              direction={{ base: 'column', lg: 'row' }}
             >
               <Flex direction="column" gap="8px">
                 <Text
@@ -60,13 +68,20 @@ const Footer = () => {
                 </Text>
               </Flex>
               {arrow ? (
-                <Image
-                  w="25px"
-                  h="25px"
-                  src="./assets/images/svg/footer-arrow.svg"
-                  alt="landing image"
-                  transform={{ base: 'rotate(90deg)', md: 'rotate(0)' }}
-                />
+                <Box
+                  height={{ base: '25px', lg: '100%' }}
+                  width={{ base: '100%', lg: '25px' }}
+                  position="relative"
+                >
+                  <AbsoluteCenter w="25px" h="25px">
+                    <Image
+                      w="100%"
+                      src="./assets/images/svg/footer-arrow.svg"
+                      alt="landing image"
+                      transform={{ base: 'rotate(90deg)', lg: 'rotate(0)' }}
+                    />
+                  </AbsoluteCenter>
+                </Box>
               ) : null}
             </Flex>
           ))}
