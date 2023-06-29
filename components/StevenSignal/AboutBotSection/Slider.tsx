@@ -5,10 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const desktopSlides = ['first', 'second', 'third', 'fourth', 'fifth']
+const desktopSlides = ['first', 'third', 'fourth', 'fifth']
 const smallScreenSlides = [
   'first_small',
-  'second_small',
   'third_small',
   'fourth_small',
   'fifth_small',
