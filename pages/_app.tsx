@@ -9,6 +9,9 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => (
     <Head>
       <title>Steven Signal</title>
       <link rel="shortcut icon" href="./assets/images/logo.ico" />
+      <link rel="alternate" href="https://stevensignal.ai/en" hrefLang="x-default" />
+      <link rel="alternate" href="https://stevensignal.ai/en" hrefLang="en" />
+      <link rel="alternate" href="https://stevensignal.ai/ru" hrefLang="ru" />
     </Head>
     <ChakraProvider>
       <Component {...pageProps} />

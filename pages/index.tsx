@@ -11,6 +11,7 @@ import Header from '../components/StevenSignal/HeaderSection'
 import PatternTypes from '../components/StevenSignal/PatternTypes'
 import RecognizablePatterns from '../components/StevenSignal/RecognizablePatterns'
 import TextSection from '../components/StevenSignal/TextSection'
+import Seo from '../Seo'
 
 const metaData = {
   en: {
@@ -51,9 +52,24 @@ const StevenSignal = () => {
     setSelectedLanguage(router.query.lang as string)
   }, [router.query.lang])
 
+  const [canonicalUrl, setCanonicalUrl] = useState<string>('')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const canonical = window.location.href.endsWith('/')
+        ? window.location.href
+        : `${window.location.href}/`
+
+      setCanonicalUrl(canonical)
+    }
+  }, [router.asPath])
+
   return (
     <>
-      <Head>{getMeta(selectedLanguage)}</Head>
+      <Head>
+        {getMeta(selectedLanguage)}
+      </Head>
+      <Seo canonicalUrl={canonicalUrl} />
       <Container maxW="1164px">
         <Flex direction="column" gap={{ base: '16px', md: '32px' }}>
           <Header />
