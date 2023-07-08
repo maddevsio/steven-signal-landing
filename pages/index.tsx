@@ -52,24 +52,12 @@ const StevenSignal = () => {
     setSelectedLanguage(router.query.lang as string)
   }, [router.query.lang])
 
-  const [canonicalUrl, setCanonicalUrl] = useState<string>('')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const canonical = window.location.href.endsWith('/')
-        ? window.location.href
-        : `${window.location.href}/`
-
-      setCanonicalUrl(canonical)
-    }
-  }, [router.asPath])
-
   return (
     <>
       <Head>
         {getMeta(selectedLanguage)}
       </Head>
-      <Seo canonicalUrl={canonicalUrl} />
+      <Seo />
       <Container maxW="1164px">
         <Flex direction="column" gap={{ base: '16px', md: '32px' }}>
           <Header />
