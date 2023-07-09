@@ -1,6 +1,4 @@
 <h1 align="center">
-  <img src="https://github.com/maddevsio/steven-signal-landing/assets/64611024/9af47663-0712-4b97-9a97-00c805d5c8dc" alt="Steven Signal" width="150px"/>
-  <br/>
   <span>Steven Signal Landing Page Repository</span>
 </h1>
 <br/>
