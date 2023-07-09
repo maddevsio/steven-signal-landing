@@ -12,6 +12,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { LanguageSwitcher } from 'next-export-i18n'
+import scrollToAnchor from '../../../utils/scrollToAnchor'
 import useTranslation from '../../../utils/useTranslation'
 import HeaderLogo from './Logo'
 
@@ -66,11 +67,12 @@ const Header = () => {
       </Box>
       <Center mt={{ base: '103px', md: '121px' }}>
         <Link
+          as="button"
           textColor="#3475EF"
           fontWeight={500}
           fontSize="16px"
           lineHeight="19px"
-          href="#get-bot-free"
+          onClick={() => scrollToAnchor('get-bot-free')}
         >
           <ArrowDownIcon boxSize={5} mr="16px" />
           {t('TRY_FOR_FREE_LINK')}
