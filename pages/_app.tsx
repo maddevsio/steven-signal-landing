@@ -19,13 +19,11 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
   const router = useRouter();
   const { query } = router;
   const metadataMap: MetadataMap = {
-    'en': englishMetadata,
-    'ru': russianMetadata,
-    // Add more languages as needed
+    en: englishMetadata,
+    ru: russianMetadata,
   };
 
   const lang = Array.isArray(query.lang) ? query.lang[0] : query.lang;
-
   const metadata = (lang && metadataMap[lang]) || englishMetadata;
 
   return (
