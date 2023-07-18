@@ -30,7 +30,7 @@ const RecognizablePatterns = () => {
         </Text>
         <Flex>
           <ul style={{ listStyle: 'none', color: '#fff' }}>
-            {t('RECOGNIZABLE_PATTERNS_LIST', { returnObjects: true }).map((item: string, index: number) => (
+            {(t('RECOGNIZABLE_PATTERNS_LIST', { returnObjects: true }) as []).map((item: string, index: number) => (
               <li style={{ display: 'flex', gap: '16px' }} key={index}>
                 <Image
                   src="/assets/images/arrow-right.svg"
