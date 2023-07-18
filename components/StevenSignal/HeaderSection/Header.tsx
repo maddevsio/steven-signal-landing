@@ -6,18 +6,20 @@ import {
   Link,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
-  Text,
+  Text
 } from '@chakra-ui/react'
-import { LanguageSwitcher } from 'next-export-i18n'
+import { useRouter } from 'next/router'
+import i18nextConfig from '../../../next-i18next.config'
 import scrollToAnchor from '../../../utils/scrollToAnchor'
-import useTranslation from '../../../utils/useTranslation'
+import LanguageSwitchLink from '../../shared/LanguageSwitcherLink'
 import HeaderLogo from './Logo'
 
-const Header = () => {
-  const [t, currentLang] = useTranslation()
+const Header = ({ title, linkDescription }: { title: string, linkDescription: string }) => {
+  const router = useRouter()
+  const currentLocale =
+    router.query.locale || i18nextConfig.i18n.defaultLocale
 
   return (
     <header>
@@ -30,22 +32,19 @@ const Header = () => {
         <Menu autoSelect={false}>
           <MenuButton>
             <Flex alignItems="center" gap="3px">
-              {currentLang.toUpperCase()}
+              {Array.isArray(currentLocale) ? currentLocale[0].toUpperCase() : currentLocale.toUpperCase()}
               <ChevronDownIcon />
             </Flex>
           </MenuButton>
           <MenuList borderRadius="none">
-            <MenuItem>
-              <LanguageSwitcher lang="en">
-                <Text w="100%">EN</Text>
-              </LanguageSwitcher>
-            </MenuItem>
-            <MenuDivider />
-            <MenuItem>
-              <LanguageSwitcher lang="ru">
-                <Text w="100%">RU</Text>
-              </LanguageSwitcher>
-            </MenuItem>
+            {i18nextConfig.i18n.locales.map((locale, index) => {
+              if (locale === currentLocale) return null
+              return (
+                <MenuItem key={index}>
+                  <LanguageSwitchLink locale={locale} key={locale} />
+                </MenuItem>
+              )
+            })}
           </MenuList>
         </Menu>
       </Flex>
@@ -58,8 +57,9 @@ const Header = () => {
           fontWeight={900}
           fontSize={{ base: '32px', md: '46px', lg: '64px' }}
           lineHeight={{ base: '39px', md: '48px', lg: '78px' }}
+          suppressHydrationWarning
         >
-          {t('MAIN_TITLE')}{' '}
+          {title}{' '}
           <Text as="span" color="#3474ef">
             Telegram!
           </Text>
@@ -73,9 +73,10 @@ const Header = () => {
           fontSize="16px"
           lineHeight="19px"
           onClick={() => scrollToAnchor('get-bot-free')}
+          suppressHydrationWarning
         >
           <ArrowDownIcon boxSize={5} mr="16px" />
-          {t('TRY_FOR_FREE_LINK')}
+          {linkDescription}
         </Link>
       </Center>
     </header>

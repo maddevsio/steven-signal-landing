@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-export-i18n'
+import { useTranslation } from 'next-i18next'
 import CustomIcon from '../../shared/CustomIcon'
 
 const BinanceSection = () => {
@@ -32,7 +32,7 @@ const BinanceSection = () => {
           pb={{ base: '32px', md: '0' }}
         >
           <CustomIcon
-            imageSrc="assets/images/svg/binanceIcon.svg"
+            imageSrc="/assets/images/svg/binanceIcon.svg"
             maxW={{ base: '200px', md: '292px' }}
             alt="Binance"
             mx={{ base: 'auto', md: 'unset' }}
@@ -61,12 +61,12 @@ const BinanceSection = () => {
             justifyContent={{ base: 'center', md: 'flex-start' }}
           >
             <CustomIcon
-              imageSrc="assets/images/svg/paxgIcon.svg"
+              imageSrc="/assets/images/svg/paxgIcon.svg"
               maxW="292px"
               alt="Binance"
             />
             <CustomIcon
-              imageSrc="assets/images/svg/usdtIcon.svg"
+              imageSrc="/assets/images/svg/usdtIcon.svg"
               maxW="292px"
               alt="Binance"
             />

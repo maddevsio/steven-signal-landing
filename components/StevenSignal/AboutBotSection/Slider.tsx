@@ -36,7 +36,7 @@ const Slider = () => {
           {smallScreenSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <Image
-                src={`./assets/images/header-slider/${slide}.svg`}
+                src={`/assets/images/header-slider/${slide}.svg`}
                 alt="landing image"
               />
             </SwiperSlide>
@@ -57,7 +57,7 @@ const Slider = () => {
           {desktopSlides.map((slide, index) => (
             <SwiperSlide key={index}>
               <Image
-                src={`./assets/images/header-slider/${slide}.svg`}
+                src={`/assets/images/header-slider/${slide}.svg`}
                 alt="landing image"
               />
             </SwiperSlide>

@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-export-i18n'
+import { useTranslation } from 'next-i18next'
 import CustomIcon from '../../shared/CustomIcon'
 import IconText from '../../shared/IconText'
 import Slider from './Slider'
@@ -45,10 +45,10 @@ const AboutBotSection = () => {
       >
         <IconText
           title={t('FIRST_STEP')}
-          imagePath="./assets/images/svg/pattern.svg"
+          imagePath="/assets/images/svg/pattern.svg"
         />
         <CustomIcon
-          imageSrc="./assets/images/svg/arrow.svg"
+          imageSrc="/assets/images/svg/arrow.svg"
           alt="Arrow"
           width={{ base: '40px', lg: '80px' }}
           height={{ base: '40px', lg: '80px' }}
@@ -56,7 +56,7 @@ const AboutBotSection = () => {
         />
         <IconText
           title={t('SECOND_STEP')}
-          imagePath="./assets/images/svg/signal.svg"
+          imagePath="/assets/images/svg/signal.svg"
         />
       </Flex>
       <Slider />

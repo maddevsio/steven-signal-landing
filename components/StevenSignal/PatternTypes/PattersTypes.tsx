@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react'
-import { useTranslation } from 'next-export-i18n'
+import { useTranslation } from 'next-i18next'
 import { DesktopCards, MobileCards } from './Cards'
 import { patternCards, сards } from './cardsData'
 

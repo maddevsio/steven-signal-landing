@@ -1,5 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react'
-import { useTranslation } from 'next-export-i18n'
+import { useTranslation } from 'next-i18next'
 import Logo from '../../shared/Logo'
 
 const HeaderLogo = () => {
@@ -15,6 +15,7 @@ const HeaderLogo = () => {
         fontWeight={700}
         fontSize={{ base: '16px', md: '20px' }}
         lineHeight={{ base: '19px', md: '24px' }}
+        suppressHydrationWarning
       >
         {t('LOGO_TEXT')}
       </Text>

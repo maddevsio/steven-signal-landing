@@ -12,7 +12,7 @@
   "TOKENIZED_ASSETS": "Однако, если вы торгуете или инвестируете в акции, то можно рассмотреть подключение токенизированных активов, таких как Золото в виде пары PAXG/USDT.",
   "RECOGNIZABLE_PATTERNS_TITLE": "Распознаваемые паттерны",
   "PATTERN_TYPES_TITLE": "Виды распознаваемых паттернов",
-  "RECOGNIZABLE_PATTERNS_LIST": "Свечные, Smart Money patterns, Фигурные",
+  "RECOGNIZABLE_PATTERNS_LIST": ["Свечные", "Smart Money patterns", "Фигурные"],
   "ADDITIONAL_PATTERNS": "Также бот распознает такие редкие паттерны как",
   "DEVELOPMENT_PATTERNS_TITLE": "Паттерны в разработке",
   "DEVELOPMENT_PATTERNS_DESCRIPTION": "На данный момент мы работаем над распознаванием ряда паттернов ботом, для более точного прогнозирования графика.",

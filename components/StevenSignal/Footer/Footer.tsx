@@ -7,7 +7,7 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react'
-import { useTranslation } from 'next-export-i18n'
+import { useTranslation } from 'next-i18next'
 import { footerItems } from './footerData'
 
 const Footer = () => {
@@ -76,7 +76,7 @@ const Footer = () => {
                   <AbsoluteCenter w="25px" h="25px">
                     <Image
                       w="100%"
-                      src="./assets/images/svg/footer-arrow.svg"
+                      src="/assets/images/svg/footer-arrow.svg"
                       alt="landing image"
                       transform={{ base: 'rotate(90deg)', lg: 'rotate(0)' }}
                     />
@@ -111,7 +111,7 @@ const Footer = () => {
             justifyContent="center"
           >
             <Image
-              src="./assets/images/svg/telegram.svg"
+              src="/assets/images/svg/telegram.svg"
               alt="landing image"
               display="inline"
               w="26px"
@@ -128,7 +128,7 @@ const Footer = () => {
           >
             {t('FOOTER_SECONDARY_TEXT')}
             <Image
-              src="./assets/images/svg/top-arrow.svg"
+              src="/assets/images/svg/top-arrow.svg"
               alt="landing image"
               position="absolute"
               right="-20%"

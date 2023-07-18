@@ -1,9 +1,6 @@
-module.exports = {
-  reactStrictMode: true,
+// const { i18n } = require('./next-i18next.config')
 
-  webpack: function (config) {
-    config.experiments = { topLevelAwait: true }
-    config.module.rules.push()
-    return config
-  },
+module.exports = {
+  // i18n,
+  trailingSlash: true,
 }
