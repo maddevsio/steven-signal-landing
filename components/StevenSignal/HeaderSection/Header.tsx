@@ -36,11 +36,11 @@ const Header = ({ title, linkDescription }: { title: string, linkDescription: st
               <ChevronDownIcon />
             </Flex>
           </MenuButton>
-          <MenuList borderRadius="none">
+          <MenuList borderRadius="none" p="0">
             {i18nextConfig.i18n.locales.map((locale, index) => {
               if (locale === currentLocale) return null
               return (
-                <MenuItem key={index}>
+                <MenuItem key={index} p="0">
                   <LanguageSwitchLink locale={locale} key={locale} />
                 </MenuItem>
               )

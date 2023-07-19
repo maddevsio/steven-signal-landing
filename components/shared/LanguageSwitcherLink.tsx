@@ -30,9 +30,9 @@ const LanguageSwitchLink: React.FC<LanguageSwitchLinkProps> = ({ locale, ...rest
   }
 
   return (
-    <Link href={href} onClick={() => languageDetector.cache?.(locale)} style={{ width: '100%' }}>
+    <Link href={href} onClick={() => languageDetector.cache?.(locale)} style={{ width: '100%', padding: '8px 10px' }}>
       {locale.toUpperCase()}
-    </Link>
+    </Link >
   );
 };
 
