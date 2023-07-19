@@ -94,5 +94,3 @@ const Header = ({ title, linkDescription }: { title: string, linkDescription: st
 }
 
 export default Header
-
-// delete the scrollToAnchor helper
