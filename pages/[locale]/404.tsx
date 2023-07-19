@@ -30,5 +30,5 @@ const Homepage = () => {
 
 export default Homepage
 
-const getStaticProps = makeStaticProps(['404'])
+const getStaticProps = makeStaticProps(['404', 'common'])
 export { getStaticPaths, getStaticProps }
