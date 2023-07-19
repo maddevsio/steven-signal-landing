@@ -1,8 +1,9 @@
-import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import {
   Box,
   Center,
   Flex,
+  Image,
   Link,
   Menu,
   MenuButton,
@@ -12,7 +13,6 @@ import {
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import i18nextConfig from '../../../next-i18next.config'
-import scrollToAnchor from '../../../utils/scrollToAnchor'
 import LanguageSwitchLink from '../../shared/LanguageSwitcherLink'
 import HeaderLogo from './Logo'
 
@@ -57,7 +57,7 @@ const Header = ({ title, linkDescription }: { title: string, linkDescription: st
           fontWeight={900}
           fontSize={{ base: '32px', md: '46px', lg: '64px' }}
           lineHeight={{ base: '39px', md: '48px', lg: '78px' }}
-          suppressHydrationWarning
+
         >
           {title}{' '}
           <Text as="span" color="#3474ef">
@@ -67,20 +67,32 @@ const Header = ({ title, linkDescription }: { title: string, linkDescription: st
       </Box>
       <Center mt={{ base: '103px', md: '121px' }}>
         <Link
-          as="button"
-          textColor="#3475EF"
-          fontWeight={500}
-          fontSize="16px"
-          lineHeight="19px"
-          onClick={() => scrollToAnchor('get-bot-free')}
-          suppressHydrationWarning
+          color="#fff"
+          fontWeight={700}
+          fontSize={{ base: '16px', md: "18px" }}
+          py="16px"
+          px={{ base: '16px', md: "24px" }}
+          borderRadius="12px"
+          bg="#000"
+          _hover={{
+            bg: '#3475EF',
+            transition: '0.3s all'
+          }}
+          transition='0.3s all'
+          href="https://t.me/steven_signal_bot"
+          isExternal
+          display="flex"
+          alignItems='center'
+          gap="16px"
         >
-          <ArrowDownIcon boxSize={5} mr="16px" />
-          {linkDescription}
+          <Image maxW="32px" maxH="32px" src="/assets/images/svg/telegram.svg" alt="landing image" />
+          <Text>{linkDescription}</Text>
         </Link>
       </Center>
-    </header>
+    </header >
   )
 }
 
 export default Header
+
+// delete the scrollToAnchor helper

@@ -15,7 +15,6 @@ const HeaderLogo = () => {
         fontWeight={700}
         fontSize={{ base: '16px', md: '20px' }}
         lineHeight={{ base: '19px', md: '24px' }}
-        suppressHydrationWarning
       >
         {t('LOGO_TEXT')}
       </Text>
