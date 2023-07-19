@@ -4,8 +4,8 @@ import { type AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { ReactElement } from 'react'
-import { metadata as englishMetadata } from '../i18n/metadata.en'
-import { metadata as russianMetadata } from '../i18n/metadata.ru'
+import { metadata as englishMetadata } from '../metadata/metadata.en'
+import { metadata as russianMetadata } from '../metadata/metadata.ru'
 import '../styles/_global.css'
 interface MetadataMap {
   [locale: string]: {
