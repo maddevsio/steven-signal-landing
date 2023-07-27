@@ -20,6 +20,7 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
   const router = useRouter();
   const { query } = router;
   const [metadata, setMetadata] = useState(englishMetadata)
+
   useEffect(() => {
     const metadataMap: MetadataMap = {
       en: englishMetadata,
