@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
     <>
       <Head>
         <title>{metadata.ogTitle}</title>
-        <link rel="shortcut icon" href="./assets/images/logo.ico" />
+        <link rel="shortcut icon" href="/assets/images/logo.ico" />
         <link rel="alternate" href="https://stevensignal.ai/en/" hrefLang="x-default" />
         <link rel="alternate" href="https://stevensignal.ai/en/" hrefLang="en" />
         <link rel="alternate" href="https://stevensignal.ai/ru/" hrefLang="ru" />
